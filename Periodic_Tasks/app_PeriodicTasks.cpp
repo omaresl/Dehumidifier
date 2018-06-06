@@ -30,9 +30,8 @@ void app_PeriodicTasks_100ms(void *pvParameters)
 
 	for(;;)// A Task shall never return or exit.
 	{
-		vTaskDelay( 100 / portTICK_PERIOD_MS ); // wait for 100ms
+		vTaskDelay( 50 / portTICK_PERIOD_MS ); // wait for 100ms
 
-		app_DisplayButtonMngr();
 		app_DisplayDataMngr();
 	}
 }
@@ -49,7 +48,7 @@ void app_PeriodicTasks_10ms(void *pvParameters)
 
 	for(;;)// A Task shall never return or exit.
 	{
-		vTaskDelay( 50 / portTICK_PERIOD_MS ); // wait for 10ms
+		vTaskDelay( 100 / portTICK_PERIOD_MS ); // wait for 10ms
 
 		app_TemperatureMngr();
 	}
