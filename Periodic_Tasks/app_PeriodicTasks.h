@@ -12,5 +12,6 @@
 /* Public Declarations */
 extern void app_PeriodicTasks_100ms(void *pvParameters);
 extern void app_PeriodicTasks_10ms(void *pvParameters);
+extern void app_PeriodicTasks_5s(void *pvParameters);
 
 #endif /* APP_PERIODICTASKS_H_ */

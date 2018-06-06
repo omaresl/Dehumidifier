@@ -41,6 +41,14 @@ void setup()
 			,NULL								//pvParameters
 			,0									//Priority
 			,NULL);								//pxCreatedTask
+	//5 s Task Creation
+	xTaskCreate(
+			app_PeriodicTasks_5s				//Function
+			,(const portCHAR *)"5s Task"		//ID
+			,128u								//Stack
+			,NULL								//pvParameters
+			,0									//Priority
+			,NULL);								//pxCreatedTask
 }
 
 // The loop function is called in an endless loop

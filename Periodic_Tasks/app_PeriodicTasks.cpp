@@ -53,3 +53,29 @@ void app_PeriodicTasks_10ms(void *pvParameters)
 		app_TemperatureMngr();
 	}
 }
+
+/*************************************************
+ * Name: app_PeriodicTasks_5s
+ * Description: Function called every 5s
+ * Parameters: None
+ * Return: None
+ *************************************************/
+void app_PeriodicTasks_5s(void *pvParameters)
+{
+	(void) pvParameters;
+
+	for(;;)// A Task shall never return or exit.
+	{
+		vTaskDelay( 5000 / portTICK_PERIOD_MS ); // wait for 10ms
+
+		//Toggle Connector
+		if(true == digitalRead(MACRO_HSSW_PIN_CONTACTOR))
+		{
+			digitalWrite(MACRO_HSSW_PIN_CONTACTOR,false);
+		}
+		else
+		{
+			digitalWrite(MACRO_HSSW_PIN_CONTACTOR,true);
+		}
+	}
+}
